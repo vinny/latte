@@ -1,0 +1,229 @@
+/*  phpBB3 Style Sheet
+    --------------------------------------------------------------
+	Style name:			Latte
+	Based on style:		prosilver (the default phpBB 3.2.x style)
+	Original author:	Tom Beddard ( http://www.subblue.com/ )
+	Modified by:		Vjacheslav Trushkin ( http://www.artodia.com )
+    --------------------------------------------------------------
+*/
+
+@import url("normalize.css?v=3.2");
+@import url("base.css?v=3.2");
+@import url("utilities.css?v=3.2");
+@import url("common.css?v=3.2");
+@import url("links.css?v=3.2");
+@import url("content.css?v=3.2");
+@import url("buttons.css?v=3.2");
+@import url("cp.css?v=3.2");
+@import url("forms.css?v=3.2");
+@import url("icons.css?v=3.2");
+@import url("colours.css?v=3.2");
+@import url("responsive.css?v=3.2");
+
+.page-width {
+	box-sizing: border-box;
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+.forabg ul.topiclist li.header, .forumbg ul.topiclist li.header {
+	background: url("./images/category.png") no-repeat scroll 100% 0px, #c09855 linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%) repeat scroll 0 0;
+	border: 0 solid #c09855;
+	border-radius: 4px;
+	box-shadow: 1px 1px 3px rgba(101, 76, 34, 0.1);
+	color: #fefbf5;
+	font-size: 15px;
+	font-weight: normal;
+	line-height: 1.4;
+	margin: 0;
+	padding: 5px;
+	position: relative;
+	text-shadow: 1px 1px 1px rgba(101, 76, 34, 0.3);
+	text-transform: none;
+}
+
+.forabg ul.topiclist li.row, .forumbg ul.topiclist li.row {
+	background: #f0ece0 linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%) repeat scroll 0 0;
+	border: 0 solid #ddd7c8;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px rgba(101, 76, 34, 0.1);
+	margin: 5px 0;
+	padding: 0;
+}
+
+.forabg li.header dt {
+	font-family: "Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: none;
+}
+
+dl.elegant-row dt, ul.topiclist.two-long-columns dt {
+	margin-right: -250px;
+}
+
+.forum-statistics {
+	color: #8b8374;
+	font-size: 11px;
+	padding-top: 2px;
+}
+
+.forum-statistics .value {
+	color: #000;
+}
+
+.navbar + .nav-breadcrumbs {
+	background: #f0ece0 linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%) repeat scroll 0 0;
+	border: 0 solid #ddd7c8;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px rgba(101, 76, 34, 0.1);
+	clear: both;
+	padding: 0 9px;
+}
+
+.navbar.nav-primary {
+    background: transparent none repeat scroll 0 0;
+    border-radius: 0;
+    border-width: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+.navbar.nav-primary li.tab a {
+	background-color: #f0ece0;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0px, rgba(255, 255, 255, 0) 100%);
+	border-color: #e8e1cf;
+	color: #654c22;
+	border-radius: 5px 5px 0 0;
+	padding: 0 5px;
+}
+
+.navbar.nav-primary li.tab a:hover {
+	background-color: #654c22;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0) 100%);
+	border-color: #654c22;
+	box-shadow: 1px 1px 3px rgba(101, 76, 34, 0.1);
+	color: #fefbf5;
+}
+
+.navbar.nav-primary .linklist .quick-links {
+	margin-left: 10px;
+}
+
+.navbar.nav-primary .quick-links .dropdown-trigger, #notification_list_button, .header-avatar {
+	background-color: #f0ece0;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0px, rgba(255, 255, 255, 0) 100%);
+	border-color: #e8e1cf;
+	color: #654c22;
+	border-radius: 5px 5px 0 0;
+	padding: 0 5px;
+}
+
+.navbar.nav-primary .quick-links .dropdown-trigger:hover, #notification_list_button:hover, .header-avatar:hover{
+	background-color: #654c22;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0) 100%);
+	border-color: #654c22;
+	box-shadow: 1px 1px 3px rgba(101, 76, 34, 0.1);
+	color: #fefbf5;
+}
+
+.navbar.nav-primary .linklist #username_logged_in {
+	margin-right: 10px;
+}
+
+.navbar.nav-primary li.tab.selected a {
+    border-color: #654c22;
+    color: #fefbf5;
+	background-color: #654c22;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 100%);
+	padding: 0 10px;
+}
+
+.navbar.nav-primary li.tab.selected a:hover {
+    text-decoration: none;
+}
+
+.navbar.nav-secondary {
+	background-color: #654c22;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0) 100%);
+	border-color: #654c22;
+	box-shadow: 1px 1px 3px rgba(101, 76, 34, 0.1);
+	color: #fefbf5;
+}
+
+.navbar.nav-secondary a {
+	color: #fefbf5;
+	text-decoration: none;
+}
+
+.navbar.nav-breadcrumbs {
+	margin-top: 8px;
+}
+
+a.forumtitle.unread, a.topictitle.unread, .pm_unread, a.subforum.unread {
+	color: #75a14a;
+}
+
+dl.row-item dt a.unread {
+	color: #75a14a;
+}
+
+dl dt .list-inner .topic-status {
+	font-size: 14px;
+	pointer-events: none;
+	float: right;
+	right: 4px;
+	top: 3px;
+}
+.topic-status.sticky {
+	color: #8b8374;
+}
+
+.panel > .inner > h3:first-child, .panel > h3:first-child {
+	background: url("./images/category.png") no-repeat scroll 100% 0px, #c09855 linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%) repeat scroll 0 0;
+	border: 0 solid #c09855;
+	border-radius: 4px 4px 0 0;
+	box-shadow: 1px 1px 3px rgba(101, 76, 34, 0.1);
+	color: #fefbf5;
+	font-size: 15px;
+	font-weight: normal;
+	line-height: 1.4;
+	margin: -5px -10px 5px;
+	padding: 5px 10px;
+	text-shadow: 1px 1px 1px rgba(101, 76, 34, 0.3);
+	text-transform: none;
+}
+
+.dropdown-extended .header .header_settings a {
+	color: #FFF;
+}
+
+.dropdown .dropdown-contents {
+	border-color: #654c22;
+	border-radius: 0 0 5px 5px;
+	border-style: solid;
+	border-width: 3px 0 0;
+	box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
