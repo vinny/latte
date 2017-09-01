@@ -197,15 +197,30 @@
 		<!-- ENDIF -->
 		<!-- EVENT index_body_markforums_after -->
 
+		<!-- IF not S_IS_BOT and U_MARK_TOPICS and .topicrow -->
+			<li>
+				<a href="{U_MARK_TOPICS}" class="mark" accesskey="m" data-ajax="mark_topics_read">
+					<i class="icon fa-check-square-o fa-fw" aria-hidden="true"></i> {L_MARK_TOPICS_READ}
+				</a>
+			</li>
+		<!-- ENDIF -->
+		
+		<!-- IF U_WATCH_FORUM_LINK and not S_IS_BOT -->
+			<li data-last-responsive="true">
+				<a href="{U_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" data-ajax="toggle_link" data-toggle-class="icon <!-- IF S_WATCHING_FORUM -->fa-check-circle-o<!-- ELSE -->fa-circle-o<!-- ENDIF --> fa-fw" data-toggle-text="{S_WATCH_FORUM_TOGGLE}" data-toggle-url="{U_WATCH_FORUM_TOGGLE}">
+					<i class="icon <!-- IF S_WATCHING_FORUM -->fa-circle-o<!-- ELSE -->fa-check-circle-o<!-- ENDIF --> fa-fw" aria-hidden="true"></i><span>{S_WATCH_FORUM_TITLE}</span>
+				</a>
+			</li>
+		<!-- ENDIF -->
 
-		<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+		<!-- IF S_DISPLAY_SEARCH -->
 			<li>
 				<a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}" role="menuitem">
 					<i class="icon fa-search fa-fw" aria-hidden="true"></i>{L_SEARCH}
 				</a>
 			</li>
 		<!-- IF S_USER_LOGGED_IN -->
-			<li>
+			<li class="responsive-hide">
 				<a href="{U_SEARCH_NEW}" role="menuitem">
 					<i class="icon fa-file-o fa-comments" aria-hidden="true"></i><span>{L_SEARCH_NEW}</span>
 				</a>
