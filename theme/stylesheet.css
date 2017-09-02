@@ -127,7 +127,7 @@ dl.elegant-row dt, ul.topiclist.two-long-columns dt {
 	color: #fefbf5;
 }
 
-.navbar.nav-primary .linklist #username_logged_in {
+.navbar.nav-primary .linklist .username_logged_in {
 	margin-right: 10px;
 }
 
@@ -155,13 +155,17 @@ dl.elegant-row dt, ul.topiclist.two-long-columns dt {
 	color: #fefbf5;
 	text-decoration: none;
 	display: inline-block;
-    font-size: 11px;
-    line-height: 25px;
-    padding: 1px 5px;
+	font-size: 11px;
+	line-height: 25px;
+	padding: 1px 5px;
 }
 
 .navbar.nav-breadcrumbs {
 	margin-top: 8px;
+}
+
+a.time {
+	font-size: 13px;
 }
 
 a.forumtitle.unread, a.topictitle.unread, .pm_unread, a.subforum.unread {

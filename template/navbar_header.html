@@ -17,32 +17,32 @@
 						<!-- IF S_REGISTERED_USER -->
 							<li>
 								<a href="{U_SEARCH_SELF}" role="menuitem">
-									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>{L_SEARCH_SELF}</span>
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>{L_SEARCH_SELF}</span>
 								</a>
 							</li>
 						<!-- ENDIF -->
 						<!-- IF S_USER_LOGGED_IN -->
 							<li>
 								<a href="{U_SEARCH_NEW}" role="menuitem">
-									<i class="icon fa-file-o fa-fw icon-red" aria-hidden="true"></i><span>{L_SEARCH_NEW}</span>
+									<i class="icon fa-search fa-fw icon-red" aria-hidden="true"></i><span>{L_SEARCH_NEW}</span>
 								</a>
 							</li>
 						<!-- ENDIF -->
 						<!-- IF S_LOAD_UNREADS -->
 							<li>
 								<a href="{U_SEARCH_UNREAD}" role="menuitem">
-									<i class="icon fa-file-o fa-fw icon-red" aria-hidden="true"></i><span>{L_SEARCH_UNREAD}</span>
+									<i class="icon fa-search fa-fw icon-red" aria-hidden="true"></i><span>{L_SEARCH_UNREAD}</span>
 								</a>
 							</li>
 						<!-- ENDIF -->
 							<li>
 								<a href="{U_SEARCH_UNANSWERED}" role="menuitem">
-									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>{L_SEARCH_UNANSWERED}</span>
+									<i class="icon fa-search fa-fw icon-gray" aria-hidden="true"></i><span>{L_SEARCH_UNANSWERED}</span>
 								</a>
 							</li>
 							<li>
 								<a href="{U_SEARCH_ACTIVE_TOPICS}" role="menuitem">
-									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>{L_SEARCH_ACTIVE_TOPICS}</span>
+									<i class="icon fa-search fa-fw icon-blue" aria-hidden="true"></i><span>{L_SEARCH_ACTIVE_TOPICS}</span>
 								</a>
 							</li>
 							<li class="separator"></li>
@@ -85,7 +85,7 @@
 
 	<!-- IF S_REGISTERED_USER -->
 		<!-- EVENT navbar_header_user_profile_prepend -->
-		<li id="username_logged_in" class="rightside<!-- IF CURRENT_USER_AVATAR --> no-bulletin<!-- ENDIF -->" data-skip-responsive="true">
+		<li class="username_logged_in  rightside<!-- IF CURRENT_USER_AVATAR --> no-bulletin<!-- ENDIF -->" data-skip-responsive="true">
 			<!-- EVENT navbar_header_username_prepend -->
 			<div class="header-profile dropdown-container">
 				<a href="{U_PROFILE}" class="header-avatar dropdown-trigger"><!-- IF CURRENT_USER_AVATAR -->{CURRENT_USER_AVATAR} <!-- ENDIF --> {CURRENT_USERNAME_SIMPLE}</a>
@@ -126,13 +126,6 @@
 			</div>
 			<!-- EVENT navbar_header_username_append -->
 		</li>
-		<!-- IF S_DISPLAY_PM -->
-			<li class="rightside tab" data-skip-responsive="true">
-				<a href="{U_PRIVATEMSGS}" role="menuitem">
-					<i class="icon fa-inbox fa-fw" aria-hidden="true"></i><strong class="badge<!-- IF not PRIVATE_MESSAGE_COUNT --> hidden<!-- ENDIF -->">{PRIVATE_MESSAGE_COUNT}</strong>
-				</a>
-			</li>
-		<!-- ENDIF -->
 		<!-- IF S_NOTIFICATIONS_DISPLAY -->
 			<li class="dropdown-container dropdown-{S_CONTENT_FLOW_END} rightside" data-skip-responsive="true">
 				<a href="{U_VIEW_ALL_NOTIFICATIONS}" id="notification_list_button" class="dropdown-trigger">
@@ -141,36 +134,30 @@
 				<!-- INCLUDE notification_dropdown.html -->
 			</li>
 		<!-- ENDIF -->
-		<!-- EVENT navbar_header_user_profile_append -->
-	<!-- ELSE -->
-		<li class="rightside tab" data-skip-responsive="true">
-			<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">
-				<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>{L_LOGIN_LOGOUT}</span>
-			</a>
-		</li>
-		<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+		<!-- IF S_DISPLAY_PM -->
 			<li class="rightside tab" data-skip-responsive="true">
-				<a href="{U_REGISTER}" role="menuitem">
-					<i class="icon fa-pencil-square-o  fa-fw" aria-hidden="true"></i><span>{L_REGISTER}</span>
+				<a href="{U_PRIVATEMSGS}" role="menuitem">
+					<i class="icon fa-inbox fa-fw" aria-hidden="true"></i><strong class="badge<!-- IF not PRIVATE_MESSAGE_COUNT --> hidden<!-- ENDIF -->">{PRIVATE_MESSAGE_COUNT}</strong>
 				</a>
 			</li>
 		<!-- ENDIF -->
+		<!-- EVENT navbar_header_user_profile_append -->
+	<!-- ELSE -->
+		<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+			<li class="username_logged_in rightside tab" data-skip-responsive="true">
+				<a href="{U_REGISTER}" role="menuitem">
+					<i class="icon fa-user-plus fa-fw" aria-hidden="true"></i>
+				</a>
+			</li>
+		<!-- ENDIF -->
+		<li class="rightside tab" data-skip-responsive="true">
+			<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">
+				<i class="icon fa-sign-in fa-fw" aria-hidden="true"></i>
+			</a>
+		</li>
 		<!-- EVENT navbar_header_logged_out_content -->
 	<!-- ENDIF -->
 		<!-- EVENT overall_header_navigation_prepend -->
-		<li class="rightside tab" <!-- IF not S_USER_LOGGED_IN -->data-skip-responsive="true"<!-- ELSE -->data-last-responsive="true"<!-- ENDIF -->>
-			<a href="{U_FAQ}" rel="help" title="{L_FAQ_EXPLAIN}" role="menuitem">
-				<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i>
-			</a>
-		</li>
-		<!-- EVENT overall_header_navigation_append -->
-		<!-- IF U_ACP -->
-			<li class="rightside tab" data-last-responsive="true">
-				<a href="{U_ACP}" title="{L_ACP}" role="menuitem">
-					<i class="icon fa-cogs fa-fw" aria-hidden="true"></i>
-				</a>
-			</li>
-		<!-- ENDIF -->
 		<!-- IF U_MCP -->
 			<li class="rightside tab" data-last-responsive="true">
 				<a href="{U_MCP}" title="{L_MCP}" role="menuitem">
@@ -178,6 +165,19 @@
 				</a>
 			</li>
 		<!-- ENDIF -->
+		<!-- IF U_ACP -->
+			<li class="rightside tab" data-last-responsive="true">
+				<a href="{U_ACP}" title="{L_ACP}" role="menuitem">
+					<i class="icon fa-cogs fa-fw" aria-hidden="true"></i>
+				</a>
+			</li>
+		<!-- ENDIF -->
+		<li class="rightside tab" <!-- IF not S_USER_LOGGED_IN -->data-skip-responsive="true"<!-- ELSE -->data-last-responsive="true"<!-- ENDIF -->>
+			<a href="{U_FAQ}" rel="help" title="{L_FAQ_EXPLAIN}" role="menuitem">
+				<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i>
+			</a>
+		</li>
+		<!-- EVENT overall_header_navigation_append -->
 	</ul>
 
 	</div>
@@ -206,9 +206,17 @@
 		<!-- ENDIF -->
 		
 		<!-- IF U_WATCH_FORUM_LINK and not S_IS_BOT -->
-			<li data-last-responsive="true">
+			<li>
 				<a href="{U_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" data-ajax="toggle_link" data-toggle-class="icon <!-- IF S_WATCHING_FORUM -->fa-check-circle-o<!-- ELSE -->fa-circle-o<!-- ENDIF --> fa-fw" data-toggle-text="{S_WATCH_FORUM_TOGGLE}" data-toggle-url="{U_WATCH_FORUM_TOGGLE}">
 					<i class="icon <!-- IF S_WATCHING_FORUM -->fa-circle-o<!-- ELSE -->fa-check-circle-o<!-- ENDIF --> fa-fw" aria-hidden="true"></i><span>{S_WATCH_FORUM_TITLE}</span>
+				</a>
+			</li>
+		<!-- ENDIF -->
+
+		<!-- IF not S_IS_BOT and U_WATCH_TOPIC -->
+			<li data-last-responsive="true">
+				<a href="{U_WATCH_TOPIC}" class="watch-topic-link" title="{S_WATCH_TOPIC_TITLE}" data-ajax="toggle_link" data-toggle-class="icon <!-- IF S_WATCHING_TOPIC -->fa-check-circle-o<!-- ELSE -->fa-circle-o<!-- ENDIF --> fa-fw" data-toggle-text="{S_WATCH_TOPIC_TOGGLE}" data-toggle-url="{U_WATCH_TOPIC_TOGGLE}" data-update-all=".watch-topic-link">
+					<i class="icon <!-- IF S_WATCHING_FORUM -->fa-circle-o<!-- ELSE -->fa-check-circle-o<!-- ENDIF --> fa-fw" aria-hidden="true"></i><span>{S_WATCH_TOPIC_TITLE}</span>
 				</a>
 			</li>
 		<!-- ENDIF -->
@@ -219,13 +227,26 @@
 					<i class="icon fa-search fa-fw" aria-hidden="true"></i>{L_SEARCH}
 				</a>
 			</li>
+		<!-- ENDIF -->
 		<!-- IF S_USER_LOGGED_IN -->
 			<li class="responsive-hide">
 				<a href="{U_SEARCH_NEW}" role="menuitem">
 					<i class="icon fa-file-o fa-comments" aria-hidden="true"></i><span>{L_SEARCH_NEW}</span>
 				</a>
 			</li>
-		<!-- ENDIF -->
+		<!-- ELSE -->
+			<li>
+				<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">
+					<i class="icon fa-sign-in fa-fw" aria-hidden="true"></i><span>{L_LOGIN}</span>
+				</a>
+			</li>
+			<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+				<li>
+					<a href="{U_REGISTER}" role="menuitem">
+						<i class="icon fa-user-plus fa-fw" aria-hidden="true"></i><span>{L_REGISTER}</span>
+					</a>
+				</li>
+			<!-- ENDIF -->
 		<!-- ENDIF -->
 	</ul>
 
@@ -261,6 +282,17 @@
 				</a>
 			</li>
 		<!-- ENDIF -->
+
+		<li class="rightside dropdown-container icon-only responsive-hide">
+			<a href="#" class="dropdown-trigger time" title="{CURRENT_TIME}"><i class="fa fa-clock-o"></i></a>
+			<div class="dropdown">
+				<div class="pointer"><div class="pointer-inner"></div></div>
+				<ul class="dropdown-contents" role="menu">
+					<li><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></li>
+					<!-- IF S_USER_LOGGED_IN --><li>{CURRENT_TIME}</li><!-- ENDIF -->
+				</ul>
+			</div>
+		</li>
 	</ul>
 
 	</div>

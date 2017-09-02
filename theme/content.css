@@ -621,6 +621,7 @@ dl.thumbnail dt a:hover img {
 ----------------------------------------*/
 fieldset.polls {
 	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
+	font-size: 13px;
 }
 
 fieldset.polls dl {
@@ -665,10 +666,12 @@ fieldset.polls dd input {
 fieldset.polls dd div {
 	text-align: right;
 	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.9em;
 	font-weight: bold;
-	padding: 2px 2px 0 2px;
+	padding: 0 3px;
 	overflow: visible;
 	min-width: 8px;
+	border-radius: 4px;
 }
 
 .pollbar1, .pollbar2, .pollbar3, .pollbar4, .pollbar5 {
